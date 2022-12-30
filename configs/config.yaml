@@ -1,0 +1,12 @@
+PostgreSQL:
+  - ip: 192.168.1.99
+  - port: 5432
+  - user: wenzhouyao
+  - password: HDLJD1lzsx--
+
+MySQL:
+  - ip: 192.168.1.99
+  - port: 3306
+  - datebase: category
+  - user: wenzhouyao
+  - password: HDLJD1lzsx--
