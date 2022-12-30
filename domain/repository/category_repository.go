@@ -1,6 +1,10 @@
 package repository
 
-import "go_category/domain/model"
+import (
+	"go_category/domain/model"
+
+	"gorm.io/gorm"
+)
 
 type CategoryRepository interface {
 	InitTable() error
@@ -12,5 +16,5 @@ type CategoryRepository interface {
 }
 
 func NewCategoryRepository(db *gorm.DB) *CategoryRepository {
-	return
+	return nil
 }

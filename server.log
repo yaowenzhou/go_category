@@ -1,0 +1,36 @@
+2022/12/30 20:02:37 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/30 20:02:37 [32m/home/adc/projects/go_category/domain/db/init_db.go:126
+[0m[33m[0.242ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/30 20:02:37 [32m/home/adc/projects/go_category/domain/db/init_db.go:126
+[0m[33m[0.972ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/30 20:02:37 [32m/home/adc/projects/go_category/domain/db/init_db.go:126
+[0m[33m[1.407ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/30 20:02:37 [32m/home/adc/projects/go_category/domain/db/init_db.go:126
+[0m[33m[15.670ms] [34;1m[rows:0][0m CREATE TABLE `user` (`id` bigint NOT NULL NOT NULL,PRIMARY KEY (`id`))
+2022/12/30 20:03:53 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/30 20:03:53 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/30 20:03:53 [32m/home/adc/projects/go_category/domain/db/init_db.go:125
+[0m[33m[1.412ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/30 20:03:53 [32m/home/adc/projects/go_category/domain/db/init_db.go:125
+[0m[33m[0.983ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/30 20:03:53 [32m/home/adc/projects/go_category/domain/db/init_db.go:125
+[0m[33m[0.838ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/30 20:03:53 [32m/home/adc/projects/go_category/domain/db/init_db.go:125
+[0m[33m[0.099ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/30 20:03:53 [32m/home/adc/projects/go_category/domain/db/init_db.go:125
+[0m[33m[0.486ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/30 20:03:53 [32m/home/adc/projects/go_category/domain/db/init_db.go:125
+[0m[33m[0.718ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/30 20:03:53 [32m/home/adc/projects/go_category/domain/db/init_db.go:125
+[0m[33m[1.126ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
