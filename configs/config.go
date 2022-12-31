@@ -2,11 +2,26 @@ package configs
 
 import (
 	"fmt"
+	"go_category/consts"
+	"os"
 
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 )
 
+// DbType TODO
+type DbType string
+
+// MYSQL TODO
+const MYSQL DbType = "mysql"
+
+// PGSQL TODO
+const PGSQL DbType = "postgresql"
+
+// LogFile 日志文件
+var LogFile *os.File
+
+// DbConfig 配置
 type DbConfig struct {
 	UserName string
 	Host     string
@@ -16,10 +31,13 @@ type DbConfig struct {
 	TimeOut  int
 }
 
-type DbType string
-
-const MYSQL DbType = "mysql"
-const PGSQL DbType = "postgresql"
+func init() {
+	var err error
+	LogFile, err = os.OpenFile(consts.LogFile, os.O_WRONLY|os.O_CREATE, 0664)
+	if err != nil {
+		panic(fmt.Errorf("Fatal error config file: %w \n", err))
+	}
+}
 
 // GetDbConfig 读取DB配置
 func GetDbConfig(dbType DbType) (dbConfig *DbConfig, err error) {
@@ -42,4 +60,14 @@ func GetDbConfig(dbType DbType) (dbConfig *DbConfig, err error) {
 	dbConfig.DbName = viper.GetString(fmt.Sprintf("%s.database", dbType))
 	dbConfig.TimeOut = viper.GetInt(fmt.Sprintf("%s.timeout", dbType))
 	return dbConfig, nil
+}
+
+// GetLogFile 获取日志文件句柄
+func GetLogFile() *os.File {
+	return LogFile
+}
+
+// CloseLogFile 关闭日志文件
+func CloseLogFile() {
+	LogFile.Close()
 }

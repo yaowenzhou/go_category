@@ -1,22 +1,18 @@
 package main
 
 import (
-	"go_category/consts"
+	"go_category/configs"
 	"go_category/domain/db"
 	"log"
-	"os"
 )
 
 func setLogFile() {
-	f, err := os.OpenFile(consts.LogFile, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0664)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.SetOutput(f)
+	log.SetOutput(configs.LogFile)
 }
 
 func main() {
 	setLogFile()
+	defer configs.CloseLogFile()
 	err := db.InitDB()
 	if err != nil {
 		log.Fatal(err)

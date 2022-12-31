@@ -3,10 +3,8 @@ package db
 import (
 	"fmt"
 	"go_category/configs"
-	"go_category/consts"
 	"go_category/domain/model"
 	"log"
-	"os"
 	"time"
 
 	"github.com/pkg/errors"
@@ -20,16 +18,17 @@ import (
 var MySqlDB *gorm.DB
 var PgSqlDB *gorm.DB
 
+// var RedisClient
+
 var dbInitError error
 
 // genGormConfig 生成gorm.Config
 func genGormConfig() (cfg *gorm.Config) {
-	f, err := os.OpenFile(consts.LogFile, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0664)
-	if err != nil {
-		log.Fatal(err)
+	if dbInitError != nil {
+		return
 	}
 	newLogger := logger.New(
-		log.New(f, "\r\n", log.LstdFlags), // 指定日志文件
+		log.New(configs.LogFile, "\r\n", log.LstdFlags), // 指定日志文件
 		logger.Config{
 			SlowThreshold:             200 * time.Millisecond, // 慢 SQL 阈值, 200ms
 			LogLevel:                  logger.Info,            // 日志级别
@@ -97,6 +96,10 @@ func initPgSql() {
 	}
 	sqlDb.SetMaxOpenConns(100) //设置数据库连接池最大连接数
 	sqlDb.SetMaxIdleConns(20)  //连接池最大允许的空闲连接数，如果没有sql任务需要执行的连接数大于20，超过的连接会被连接池关闭。
+}
+
+func initRedis() {
+
 }
 
 // InitDB 初始化db
