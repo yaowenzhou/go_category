@@ -16,7 +16,6 @@ func main() {
 	err := db.InitDB()
 	if err != nil {
 		log.Fatal(err)
-		return
 	}
 	db.Automigrate()
 }

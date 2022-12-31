@@ -5,6 +5,8 @@ PostgreSQL:
   user: wenzhouyao
   password: HDLJD1lzsx--
   timeout: 10
+  max_open_conns: 100
+  max_idle_conns: 20
 
 MySQL:
   ip: 192.168.1.99
@@ -13,3 +15,18 @@ MySQL:
   user: wenzhouyao
   password: HDLJD1lzsx--
   timeout: 10
+  max_open_conns: 100
+  max_idle_conns: 20
+
+Redis:
+  ip: 192.168.1.99
+  port: 6379
+  database: 1
+  user: redis不需要指定用户
+  password: HDLJD1lzsx--
+  timeout: 10
+  max_open_conns: 100
+  max_idle_conns: 20
+docker run -p 6379:6379 --name redis -v ~/db/redis/data:/data \
+-v ~/db/redis/conf/redis.conf:/etc/redis/redis.conf \
+-d redis redis-server /etc/redis/redis.conf

@@ -1,15 +1,11 @@
 package db
 
 import (
-	"fmt"
 	"go_category/configs"
-	"go_category/domain/model"
 	"log"
 	"time"
 
-	"github.com/pkg/errors"
-	"gorm.io/driver/mysql"
-	"gorm.io/driver/postgres"
+	"github.com/go-redis/redis"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
@@ -18,7 +14,7 @@ import (
 var MySqlDB *gorm.DB
 var PgSqlDB *gorm.DB
 
-// var RedisClient
+var RedisClient *redis.Client
 
 var dbInitError error
 
@@ -44,87 +40,23 @@ func genGormConfig() (cfg *gorm.Config) {
 	}
 }
 
-// initMysql 初始化mysql
-func initMysql() {
-	if dbInitError != nil {
-		return
-	}
-	var dbConfig *configs.DbConfig
-	dbConfig, dbInitError = configs.GetDbConfig(configs.MYSQL)
-	if dbInitError != nil {
-		return
-	}
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local&timeout=%ds",
-		dbConfig.UserName, dbConfig.Password, dbConfig.Host, dbConfig.Port, dbConfig.DbName, dbConfig.TimeOut)
-	log.Printf("mysql dsn: %s\n", dsn)
-	MySqlDB, dbInitError = gorm.Open(mysql.Open(dsn), genGormConfig())
-	if dbInitError != nil {
-		dbInitError = errors.Wrap(dbInitError, "gorm.Open fail.")
-		return
-	}
-	sqlDb, err := MySqlDB.DB()
-	if err != nil {
-		dbInitError = errors.Wrap(dbInitError, "get sqldb fail.")
-		return
-	}
-	sqlDb.SetMaxOpenConns(100) //设置数据库连接池最大连接数
-	sqlDb.SetMaxIdleConns(20)  //连接池最大允许的空闲连接数，如果没有sql任务需要执行的连接数大于20，超过的连接会被连接池关闭。
-}
-
-// initPgSql 初始化pgsql
-func initPgSql() {
-	if dbInitError != nil {
-		return
-	}
-	var dbConfig *configs.DbConfig
-	dbConfig, dbInitError = configs.GetDbConfig(configs.PGSQL)
-	if dbInitError != nil {
-		return
-	}
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=disable TimeZone=Asia/Shanghai",
-		dbConfig.Host, dbConfig.UserName, dbConfig.Password, dbConfig.DbName, dbConfig.Port)
-	log.Printf("pgsql dsn: %s\n", dsn)
-	PgSqlDB, dbInitError = gorm.Open(postgres.Open(dsn), genGormConfig())
-	if dbInitError != nil {
-		dbInitError = errors.Wrap(dbInitError, "gorm.Open fail.")
-		return
-	}
-	sqlDb, err := MySqlDB.DB()
-	if err != nil {
-		dbInitError = errors.Wrap(dbInitError, "get sqldb fail.")
-		return
-	}
-	sqlDb.SetMaxOpenConns(100) //设置数据库连接池最大连接数
-	sqlDb.SetMaxIdleConns(20)  //连接池最大允许的空闲连接数，如果没有sql任务需要执行的连接数大于20，超过的连接会被连接池关闭。
-}
-
-func initRedis() {
-
-}
-
 // InitDB 初始化db
 func InitDB() (err error) {
 	initMysql()
 	initPgSql()
+	initRedis()
 	return dbInitError
 }
 
 // CloseDB 关闭数据库连接
 func CloseDB() {
-	if MySqlDB != nil {
-		sqlDb, err := MySqlDB.DB()
-		if err == nil {
-			sqlDb.Close()
-		}
-	}
-	if PgSqlDB != nil {
-		sqlDb, err := PgSqlDB.DB()
-		if err == nil {
-			sqlDb.Close()
-		}
-	}
+	closeMysql()
+	closePgsql()
+	closeRedis()
 }
 
+// Automigrate 自动修改库表结构
 func Automigrate() {
-	MySqlDB.AutoMigrate(&model.User{})
+	mysqlAutoMigrate()
+	pgsqlAutoMigrate()
 }
