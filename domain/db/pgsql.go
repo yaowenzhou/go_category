@@ -29,7 +29,7 @@ func initPgSql() {
 		dbInitError = errors.Wrap(dbInitError, "gorm.Open fail.")
 		return
 	}
-	sqlDb, err := MySqlDB.DB()
+	sqlDb, err := PgSqlDB.DB()
 	if err != nil {
 		dbInitError = errors.Wrap(dbInitError, "get sqldb fail.")
 		return
