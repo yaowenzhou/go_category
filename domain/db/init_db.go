@@ -1,11 +1,14 @@
 package db
 
 import (
+	"context"
+	"fmt"
 	"go_category/configs"
 	"log"
 	"time"
 
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v8"
+	"github.com/pkg/errors"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
@@ -41,10 +44,24 @@ func genGormConfig() (cfg *gorm.Config) {
 }
 
 // InitDB 初始化db
-func InitDB() (err error) {
-	initMysql()
-	initPgSql()
-	initRedis()
+func InitDB(ctx context.Context, dbs []configs.DbType) (err error) {
+	typeMap := make(map[configs.DbType]struct{})
+	for _, v := range dbs {
+		if _, ok := typeMap[v]; ok { // 不允许重复初始化
+			CloseDB()
+			errMsg := fmt.Sprintf("%s has been inited", v)
+			return errors.Wrap(errors.New(errMsg), errMsg+"!")
+		}
+		typeMap[v] = struct{}{}
+		switch v {
+		case configs.MYSQL_TYPE:
+			initMysql()
+		case configs.PGSQL_TYPE:
+			initPgSql()
+		case configs.REDIS_TYPE:
+			initRedis(ctx)
+		}
+	}
 	return dbInitError
 }
 

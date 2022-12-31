@@ -27,6 +27,3 @@ Redis:
   timeout: 10
   max_open_conns: 100
   max_idle_conns: 20
-docker run -p 6379:6379 --name redis -v ~/db/redis/data:/data \
--v ~/db/redis/conf/redis.conf:/etc/redis/redis.conf \
--d redis redis-server /etc/redis/redis.conf

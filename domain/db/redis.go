@@ -1,16 +1,17 @@
 package db
 
 import (
+	"context"
 	"fmt"
 	"go_category/configs"
 
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v8"
 	"github.com/pkg/errors"
 	"github.com/spf13/cast"
 )
 
 // initRedis 初始化redis客户端
-func initRedis() {
+func initRedis(ctx context.Context) {
 	if dbInitError != nil {
 		return
 	}
@@ -25,7 +26,7 @@ func initRedis() {
 		DB:       cast.ToInt(dbConfig.DbName),                        // 默认连接库
 		PoolSize: dbConfig.MaxOpenConns,                              // 连接池大小
 	})
-	_, err := RedisClient.Ping().Result()
+	_, err := RedisClient.Ping(ctx).Result()
 	if err != nil {
 		dbInitError = errors.Wrap(err, "redis connect fail.")
 	}

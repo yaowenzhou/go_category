@@ -1,200 +1,818 @@
-2022/12/31 08:50:55 testlogfatal
-2022/12/31 08:51:26 testlogfatal
-2022/12/31 08:51:27 testlogfatal
-2022/12/31 08:51:28 testlogfatal
-2022/12/31 09:02:16 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:02:16 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022/12/31 13:15:51 viper.ReadInConfig fail: Config File "config" Not Found in "[/home/adc/projects/go_category/~/projects/go_category/configs]"
+2022/12/31 13:16:23 viper.ReadInConfig fail: Config File "config" Not Found in "[/home/adc/projects/go_category/~/configs]"
+2022/12/31 13:16:47 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:16:47 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
 
-2022/12/31 09:02:16 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[0.916ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.241ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/12/31 09:02:16 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[1.520ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.777ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
 
-2022/12/31 09:02:16 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[1.681ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.023ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
 
-2022/12/31 09:02:16 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[0.675ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.176ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/12/31 09:02:16 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[2.092ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.706ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
 
-2022/12/31 09:02:16 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[0.709ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.281ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
 
-2022/12/31 09:02:16 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[1.496ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
-2022/12/31 09:03:18 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:03:18 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.957ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
 
-2022/12/31 09:03:18 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[0.980ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.757ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
 
-2022/12/31 09:03:18 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[1.291ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.434ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2022/12/31 09:03:18 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[1.548ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.944ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
 
-2022/12/31 09:03:18 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[0.835ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.333ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
 
-2022/12/31 09:03:18 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[1.660ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.676ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
 
-2022/12/31 09:03:18 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[1.603ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.823ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
 
-2022/12/31 09:03:18 [32m/home/adc/projects/go_category/domain/db/init_db.go:160
-[0m[33m[1.331ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
-2022/12/31 09:14:53 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:14:53 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
-2022/12/31 09:14:53 dbType must be 'mysql' or 'postgresql'!: dbType must be 'mysql' or 'postgresql'
-2022/12/31 09:17:03 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:17:03 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
-2022/12/31 09:17:03 redis connect fail.: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
-2022/12/31 09:17:53 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:17:53 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
-2022/12/31 09:17:53 redis connect fail.: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
-2022/12/31 09:18:41 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:18:41 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
-2022/12/31 09:18:41 redis connect fail.: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
-2022/12/31 09:56:01 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:56:01 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.807ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
 
-2022/12/31 09:56:01 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.333ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:16:47 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.809ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:48:09 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:48:09 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
 
-2022/12/31 09:56:01 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.924ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.205ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/12/31 09:56:01 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.083ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.314ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
 
-2022/12/31 09:56:01 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.147ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.395ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
 
-2022/12/31 09:56:01 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.587ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.185ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/12/31 09:56:01 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.295ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.247ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
 
-2022/12/31 09:56:01 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.020ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
-2022/12/31 09:57:34 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:57:34 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.530ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
 
-2022/12/31 09:57:34 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.234ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.007ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
 
-2022/12/31 09:57:34 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.976ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.911ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
 
-2022/12/31 09:57:34 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.039ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.325ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2022/12/31 09:57:34 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.137ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.871ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
 
-2022/12/31 09:57:34 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.597ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.497ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
 
-2022/12/31 09:57:34 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.377ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.506ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
 
-2022/12/31 09:57:34 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.090ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
-2022/12/31 09:57:44 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:57:44 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.787ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
 
-2022/12/31 09:57:44 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.352ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.646ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
 
-2022/12/31 09:57:44 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.199ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:48:09 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.384ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:55:10 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:55:10 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
 
-2022/12/31 09:57:44 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.054ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.280ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/12/31 09:57:44 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.178ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.854ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
 
-2022/12/31 09:57:44 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.615ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.005ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
 
-2022/12/31 09:57:44 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.715ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.155ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/12/31 09:57:44 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.522ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
-2022/12/31 09:57:54 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:57:54 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.590ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
 
-2022/12/31 09:57:54 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.226ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.278ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
 
-2022/12/31 09:57:54 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.177ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.948ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
 
-2022/12/31 09:57:54 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.882ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.829ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
 
-2022/12/31 09:57:54 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.158ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.418ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2022/12/31 09:57:54 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.638ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.919ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
 
-2022/12/31 09:57:54 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.379ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.306ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
 
-2022/12/31 09:57:54 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.981ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
-2022/12/31 09:57:59 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:57:59 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.666ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
 
-2022/12/31 09:57:59 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.867ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.639ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:55:10 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.765ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:55:15 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:55:15 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.241ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.868ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.022ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.184ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.623ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.228ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.956ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.599ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.399ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.833ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.329ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.051ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[6.522ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.648ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:55:15 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.894ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:55:17 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:55:17 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.232ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.956ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.155ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.162ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.541ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.168ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.960ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.928ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.398ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.796ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.302ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.377ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[6.186ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.655ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:55:17 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.843ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:55:19 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:55:19 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.232ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.836ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.954ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.155ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.524ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.238ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.896ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.644ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.373ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.355ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.339ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.593ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[6.043ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.666ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:55:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.851ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:55:20 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:55:20 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.214ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.847ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.848ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.168ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.585ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.214ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.929ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.934ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.810ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.705ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.311ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.958ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.787ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.672ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:55:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.800ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:56:18 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:56:18 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.230ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.699ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.925ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.145ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.543ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.200ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.869ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.924ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.416ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.675ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.321ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.194ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.989ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.617ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:56:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.781ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:56:20 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:56:20 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.931ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.447ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.842ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.135ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.493ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.204ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.825ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.766ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.430ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.907ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.546ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.119ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.036ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.631ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:56:20 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.742ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:59:16 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:59:16 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
 [0m[33m[0.231ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/12/31 09:57:59 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.010ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.757ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
 
-2022/12/31 09:57:59 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.242ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.058ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
 
-2022/12/31 09:57:59 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.206ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.181ms] [34;1m[rows:-][0m SELECT DATABASE()
 
-2022/12/31 09:57:59 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.618ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.637ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
 
-2022/12/31 09:57:59 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.205ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.184ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
 
-2022/12/31 09:57:59 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.921ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
-2022/12/31 09:58:06 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
-2022/12/31 09:58:06 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.909ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
 
-2022/12/31 09:58:06 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.245ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.699ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
 
-2022/12/31 09:58:06 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.942ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.368ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2022/12/31 09:58:06 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[1.607ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.880ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
 
-2022/12/31 09:58:06 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.220ms] [34;1m[rows:-][0m SELECT DATABASE()
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.830ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
 
-2022/12/31 09:58:06 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.597ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.210ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
 
-2022/12/31 09:58:06 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.289ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[6.280ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
 
-2022/12/31 09:58:06 [32m/home/adc/projects/go_category/domain/db/init_db.go:161
-[0m[33m[0.992ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.986ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:59:16 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.792ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:59:18 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:59:18 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.193ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.687ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.773ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.172ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.660ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.279ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.935ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[3.344ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.352ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.847ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.312ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.186ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.727ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.580ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:59:18 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.693ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 13:59:19 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 13:59:19 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.218ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.791ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.811ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.155ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.927ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.296ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.933ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.683ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.307ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.662ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.343ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.255ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.987ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.653ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 13:59:19 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.295ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 14:02:52 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 14:02:52 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.239ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.672ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.819ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.187ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.613ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.237ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.938ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[3.142ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.479ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.812ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.325ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.371ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.772ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.671ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 14:02:52 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.790ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 14:02:55 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 14:02:55 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.262ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.783ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.900ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.135ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.592ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.233ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.812ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[2.747ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.374ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.100ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.363ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.826ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[6.487ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.757ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 14:02:55 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.807ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 14:02:56 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 14:02:56 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.207ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.746ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[1.085ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.187ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.729ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.261ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.946ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[3.301ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.319ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.717ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.340ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[8.525ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[6.325ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.670ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 14:02:56 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.924ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2022/12/31 14:05:37 mysql dsn: wenzhouyao:HDLJD1lzsx--@tcp(192.168.1.99:3306)/category?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2022/12/31 14:05:37 pgsql dsn: host=192.168.1.99 user=wenzhouyao password=HDLJD1lzsx-- dbname=category port=5432 sslmode=disable TimeZone=Asia/Shanghai
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.289ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.779ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.849ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'category' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.181ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.608ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'category%' ORDER BY SCHEMA_NAME='category' DESC,SCHEMA_NAME limit 1
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.192ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/mysql.go:56
+[0m[33m[0.917ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'category' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[3.082ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.331ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.737ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'category' AND table_schema = CURRENT_SCHEMA() AND table_name = 'user'
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.345ms] [34;1m[rows:-][0m SELECT * FROM "user" LIMIT 1
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[7.978ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user' AND constraint_type = 'UNIQUE'
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[5.895ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'category' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'user'
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[0.706ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'user'
+
+2022/12/31 14:05:37 [32m/home/adc/projects/go_category/domain/db/pgsql.go:56
+[0m[33m[1.969ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'user' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'user' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
