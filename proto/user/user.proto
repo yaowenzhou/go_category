@@ -1,0 +1,27 @@
+syntax="proto3";
+
+option go_package="user/";
+
+package user;
+
+service User {
+  rpc GetUserInfo(GetUserInfoReq)returns(GetUserInfoRsp);
+  rpc Login(LoginReq)returns(LoginRsp);
+}
+
+message GetUserInfoReq {}
+message GetUserInfoRsp {
+  string id = 1;
+  string name = 2;
+  string phone = 3;
+  string email = 4;
+}
+
+message LoginReq {
+  string phone = 1;
+  string sms_code = 2;
+}
+message LoginRsp {
+  string token = 1;
+  int64 expiration_time = 2;
+}

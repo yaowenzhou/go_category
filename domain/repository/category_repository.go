@@ -6,8 +6,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type CategoryRepository interface {
-	InitTable() error
+type CategoryRepositoryInterface interface {
 	FindCategoryById(int64) (*model.Category, error)
 	CreateCategory(*model.Category) (int64, error)
 	DeleteCategoryById(int64) error
@@ -15,6 +14,9 @@ type CategoryRepository interface {
 	FindAll() ([]*model.Category, error)
 }
 
+type CategoryRepository struct {
+}
+
 func NewCategoryRepository(db *gorm.DB) *CategoryRepository {
-	return nil
+	return &CategoryRepository{}
 }
