@@ -46,7 +46,7 @@ func genGormConfig(dbType configs.DbType) (cfg *gorm.Config) {
 }
 
 // InitDB 初始化db
-func InitDB(ctx context.Context, dbs []configs.DbType) (err error) {
+func InitDB(ctx context.Context, dbs []configs.DbType, cst configs.ConfigSrcType) (err error) {
 	typeMap := make(map[configs.DbType]struct{})
 	for _, v := range dbs {
 		if _, ok := typeMap[v]; ok { // 不允许重复初始化
@@ -57,11 +57,11 @@ func InitDB(ctx context.Context, dbs []configs.DbType) (err error) {
 		typeMap[v] = struct{}{}
 		switch v {
 		case configs.MYSQL_TYPE:
-			initMysql()
+			initMysql(cst)
 		case configs.PGSQL_TYPE:
-			initPgSql()
+			initPgSql(cst)
 		case configs.REDIS_TYPE:
-			initRedis(ctx)
+			initRedis(ctx, cst)
 		}
 	}
 	return dbInitError

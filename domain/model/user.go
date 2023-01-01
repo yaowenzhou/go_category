@@ -1,6 +1,6 @@
 package model
 
-const UserTableName = "category"
+const UserTableName = "user"
 
 type User struct {
 	ID int64 `gorm:"primaryKey;not null;autoIncrement:false"`

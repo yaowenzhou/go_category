@@ -11,12 +11,12 @@ import (
 )
 
 // initRedis 初始化redis客户端
-func initRedis(ctx context.Context) {
+func initRedis(ctx context.Context, cst configs.ConfigSrcType) {
 	if dbInitError != nil {
 		return
 	}
 	var dbConfig *configs.DbConfig
-	dbConfig, dbInitError = configs.GetDbConfig(configs.REDIS_TYPE)
+	dbConfig, dbInitError = configs.GetDbConfig(configs.REDIS_TYPE, cst)
 	if dbInitError != nil {
 		return
 	}

@@ -16,53 +16,53 @@ type Category struct {
 	Parent      int64  `gorm:"column:parent;not null" json:"parent"`
 	Image       string `gorm:"column:image;not null" json:"image"`
 	Description string `gorm:"column:description;not null; default:''" json:"description"`
-	IsDelete    *bool  `gorm:"column:is_delete;not null" json:"is_deleted"`
+	IsDeleted   *bool  `gorm:"column:is_deleted;not null" json:"is_deleted"`
 }
 
 // TableName 获取表名
-func (u *Category) TableName() string {
-	return CategoryTableName
-}
+// func (u *Category) TableName() string {
+// 	return CategoryTableName
+// }
 
 // FindAll 获取所有的数据
 func FindAll(info *Category, db *gorm.DB) ([]*Category, error) {
 	var datas []*Category
-	db = db.Model(info).Where("is_delete = ?", true).Find(&datas)
+	db = db.Model(info).Where("is_deleted = ?", true).Find(&datas)
 	return datas, db.Error
 }
 
 // GetCategoryById 通过id查询数据
 func GetCategoryById(db *gorm.DB, id int64) (*Category, error) {
 	var data *Category
-	db = db.Model(&Category{ID: id}).Where("is_delete = ?", true).First(&data)
+	db = db.Model(&Category{ID: id}).Where("is_deleted = ?", true).First(&data)
 	return data, db.Error
 }
 
 // FindCategoryByName 通过name查询数据
 func FindCategoryByName(db *gorm.DB, name string) ([]*Category, error) {
 	var datas []*Category
-	db = db.Model(&Category{Name: name}).Where("is_delete = ?", true).Find(&datas)
+	db = db.Model(&Category{Name: name}).Where("is_deleted = ?", true).Find(&datas)
 	return datas, db.Error
 }
 
 // FindCategoryByParent 通过parent查询数据
 func FindCategoryByParent(db *gorm.DB, parent int64) ([]*Category, error) {
 	var datas []*Category
-	db = db.Model(&Category{Parent: parent}).Where("is_delete = ?", true).Find(&datas)
+	db = db.Model(&Category{Parent: parent}).Where("is_deleted = ?", true).Find(&datas)
 	return datas, db.Error
 }
 
 // FindCategorysByLevel 通过level查询数据
 func FindCategorysByLevel(db *gorm.DB, level int32) ([]*Category, error) {
 	var datas []*Category
-	db = db.Model(&Category{Level: level}).Where("is_delete = ?", true).Find(&datas)
+	db = db.Model(&Category{Level: level}).Where("is_deleted = ?", true).Find(&datas)
 	return datas, db.Error
 }
 
 // BeforeCreate TODO
 func (s *Category) BeforeCreate(db *gorm.DB) (err error) {
-	if s.IsDelete == nil {
-		s.IsDelete = new(bool)
+	if s.IsDeleted == nil {
+		s.IsDeleted = new(bool)
 	}
 	return
 }

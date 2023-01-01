@@ -23,7 +23,7 @@ message CreateCategoryReq {
   string name = 1 [(validate.rules).string = {min_len: 1}];
   int32 level = 2;
   string parent = 3;
-  string images = 4;
+  string image = 4;
   string description = 5;
 }
 message CreateCategoryRsp {
@@ -35,7 +35,7 @@ message UpdateCategoryReq {
   string name = 2;
   int32 level = 3;
   string parent = 4;
-  string images = 5;
+  string image = 5;
   string description = 6;
 }
 message UpdateCategoryRsp {}
@@ -50,7 +50,7 @@ message CategoryInfo {
   string name = 2;
   int32 level = 3;
   string parent = 4;
-  string images = 5;
+  string image = 5;
   string description = 6;
 }
 
@@ -64,5 +64,5 @@ message FindCategoryByNameReq {
   string name = 1;
 }
 message FindCategoryByNameRsp {
-  CategoryInfo datas = 1;
+  CategoryInfo data = 1;
 }

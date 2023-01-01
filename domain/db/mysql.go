@@ -12,12 +12,12 @@ import (
 )
 
 // initMysql 初始化mysql
-func initMysql() {
+func initMysql(cst configs.ConfigSrcType) {
 	if dbInitError != nil {
 		return
 	}
 	var dbConfig *configs.DbConfig
-	dbConfig, dbInitError = configs.GetDbConfig(configs.MYSQL_TYPE)
+	dbConfig, dbInitError = configs.GetDbConfig(configs.MYSQL_TYPE, cst)
 	if dbInitError != nil {
 		return
 	}

@@ -12,12 +12,12 @@ import (
 )
 
 // initPgSql 初始化pgsql
-func initPgSql() {
+func initPgSql(cst configs.ConfigSrcType) {
 	if dbInitError != nil {
 		return
 	}
 	var dbConfig *configs.DbConfig
-	dbConfig, dbInitError = configs.GetDbConfig(configs.PGSQL_TYPE)
+	dbConfig, dbInitError = configs.GetDbConfig(configs.PGSQL_TYPE, cst)
 	if dbInitError != nil {
 		return
 	}
