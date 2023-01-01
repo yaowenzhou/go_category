@@ -68,7 +68,6 @@ func GetDbConfig(dbType DbType) (dbConfig *DbConfig, err error) {
 	dbConfig.TimeOut = viper.GetInt(fmt.Sprintf("%s.timeout", dbType))
 	dbConfig.MaxOpenConns = viper.GetInt(fmt.Sprintf("%s.max_open_conns", dbType))
 	dbConfig.MaxIdleConns = viper.GetInt(fmt.Sprintf("%s.max_idle_conns", dbType))
-	fmt.Println(viper.GetStringSlice("wzyao"))
 	return dbConfig, nil
 }
 

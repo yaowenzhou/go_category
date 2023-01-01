@@ -1,0 +1,68 @@
+syntax="proto3";
+
+option go_package=".;pb";
+
+package category;
+
+import "validate/validate.proto";
+// import "google/api/annotations.proto";
+
+service Category {
+  rpc CreateCategory(CreateCategoryReq)returns(CreateCategoryRsp) {
+    // option (google.api.http) = {
+    //   get: "/api/CreateCategory" //注意这里的路径参数要和上面 GrpcGateWayRequest 中定义的保持一致
+    // };
+  };
+  rpc UpdateCategory(UpdateCategoryReq)returns(UpdateCategoryRsp);
+  rpc DeleteCategory(DeleteCategoryReq)returns(DeleteCategoryRsp);
+  rpc FindAllCategory(FindAllCategoryReq)returns(FindAllCategoryRsp);
+  rpc FindCategoryByName(FindCategoryByNameReq)returns(FindCategoryByNameRsp);
+}
+
+message CreateCategoryReq {
+  string name = 1 [(validate.rules).string = {min_len: 1}];
+  int32 level = 2;
+  string parent = 3;
+  string images = 4;
+  string description = 5;
+}
+message CreateCategoryRsp {
+  string id = 1;
+}
+
+message UpdateCategoryReq {
+  string id = 1;
+  string name = 2;
+  int32 level = 3;
+  string parent = 4;
+  string images = 5;
+  string description = 6;
+}
+message UpdateCategoryRsp {}
+
+message DeleteCategoryReq {
+  string id = 1;
+}
+message DeleteCategoryRsp {}
+
+message CategoryInfo {
+  string id = 1;
+  string name = 2;
+  int32 level = 3;
+  string parent = 4;
+  string images = 5;
+  string description = 6;
+}
+
+message FindAllCategoryReq {}
+message FindAllCategoryRsp {
+  repeated CategoryInfo datas = 1;
+  int64 total = 2;
+}
+
+message FindCategoryByNameReq {
+  string name = 1;
+}
+message FindCategoryByNameRsp {
+  CategoryInfo datas = 1;
+}

@@ -22,7 +22,7 @@ var RedisClient *redis.Client
 var dbInitError error
 
 // genGormConfig 生成gorm.Config
-func genGormConfig() (cfg *gorm.Config) {
+func genGormConfig(dbType configs.DbType) (cfg *gorm.Config) {
 	if dbInitError != nil {
 		return
 	}
@@ -35,11 +35,13 @@ func genGormConfig() (cfg *gorm.Config) {
 			Colorful:                  true,                   // 彩色打印
 		},
 	)
+	ns := schema.NamingStrategy{SingularTable: true}
+	if dbType == configs.PGSQL_TYPE {
+		ns.TablePrefix = "tenant_wenzhouyao." // schema以Tname为前缀
+	}
 	return &gorm.Config{
-		Logger: newLogger,
-		NamingStrategy: schema.NamingStrategy{
-			SingularTable: true, // 禁止复数表名
-		},
+		Logger:         newLogger,
+		NamingStrategy: ns,
 	}
 }
 

@@ -24,7 +24,7 @@ func initMysql() {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local&timeout=%ds",
 		dbConfig.UserName, dbConfig.Password, dbConfig.Host, dbConfig.Port, dbConfig.DbName, dbConfig.TimeOut)
 	log.Printf("mysql dsn: %s\n", dsn)
-	MySqlDB, dbInitError = gorm.Open(mysql.Open(dsn), genGormConfig())
+	MySqlDB, dbInitError = gorm.Open(mysql.Open(dsn), genGormConfig(configs.MYSQL_TYPE))
 	if dbInitError != nil {
 		dbInitError = errors.Wrap(dbInitError, "gorm.Open fail.")
 		return
@@ -53,5 +53,8 @@ func closeMysql() {
 
 // mysqlAutoMigrate 自动修改库表结构(mysql)
 func mysqlAutoMigrate() {
-	MySqlDB.AutoMigrate(&model.User{})
+	MySqlDB.AutoMigrate(
+		&model.User{},
+		&model.Category{},
+	)
 }

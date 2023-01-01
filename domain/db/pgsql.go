@@ -24,7 +24,7 @@ func initPgSql() {
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=disable TimeZone=Asia/Shanghai",
 		dbConfig.Host, dbConfig.UserName, dbConfig.Password, dbConfig.DbName, dbConfig.Port)
 	log.Printf("pgsql dsn: %s\n", dsn)
-	PgSqlDB, dbInitError = gorm.Open(postgres.Open(dsn), genGormConfig())
+	PgSqlDB, dbInitError = gorm.Open(postgres.Open(dsn), genGormConfig(configs.PGSQL_TYPE))
 	if dbInitError != nil {
 		dbInitError = errors.Wrap(dbInitError, "gorm.Open fail.")
 		return
@@ -53,5 +53,8 @@ func closePgsql() {
 
 // pgsqlAutoMigrate 自动修改库表结构(pgsql)
 func pgsqlAutoMigrate() {
-	PgSqlDB.AutoMigrate(&model.User{})
+	PgSqlDB.AutoMigrate(
+		&model.User{},
+		&model.Category{},
+	)
 }
