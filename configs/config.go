@@ -12,23 +12,26 @@ import (
 // DbType TODO
 type DbType string
 
-// MYSQL_TYPE TODO
-const MYSQL_TYPE DbType = "mysql"
+const (
+	// MYSQL_TYPE TODO
+	MYSQL_TYPE DbType = "mysql"
+	// PGSQL_TYPE TODO
+	PGSQL_TYPE DbType = "postgresql"
+	// REDIS_TYPE TODO
+	REDIS_TYPE DbType = "redis"
+)
 
-// PGSQL_TYPE TODO
-const PGSQL_TYPE DbType = "postgresql"
-
-// REDIS_TYPE
-const REDIS_TYPE DbType = "redis"
-
+// ConfigSrcType TODO
 type ConfigSrcType int
 
 const (
+	// CONSUL_JSON TODO
 	CONSUL_JSON ConfigSrcType = iota
-	LOCAL_FILE
+	// LOCAL_YAML TODO
+	LOCAL_YAML
 )
 
-// LogFile 日志文件
+// LogFile TODO
 var LogFile *os.File
 
 // DbConfig 配置
@@ -54,8 +57,15 @@ func init() {
 // GetDbConfigFromLocalYaml 从本地yaml配置文件读取db配置
 func GetDbConfigFromLocalYaml(dbType DbType) (dbConfig *DbConfig, err error) {
 	dbConfig = &DbConfig{}
+	// TODO: viper明显有bug，在制定了config_type的情况下，还是以默认支持的扩展名列表进行搜索
+	// TODO: 因此比如这里，我已经设置了viper.SetConfigType("yaml")
+	// TODO: 但是它找到config.json就不找了，就很坑
+	// TODO: 所以此处实际上使用的是config.json
+	viper := viper.New()
 	viper.SetConfigName("config") // 配置文件名字，注意没有扩展名
-	viper.SetConfigType("yaml")   // 如果配置文件的名称中没有包含扩展名，那么该字段是必需的
+	// 如果配置文件的名称中没有包含扩展名，那么该字段是必需的
+	// 此函数设置的文件类型不在'viper.SupportedExts'中定义的时候
+	viper.SetConfigType("yaml")
 	// /home/adc/projects/go_category/configs/config.go
 	// viper.AddConfigPath("./configs/") // 配置文件的路径
 	viper.AddConfigPath("/home/adc/projects/go_category/configs/")
@@ -83,7 +93,7 @@ func GetDbConfig(dbType DbType, cst ConfigSrcType) (dbConfig *DbConfig, err erro
 	switch cst {
 	case CONSUL_JSON:
 		return GetDbConfigFromConsul(string(dbType))
-	case LOCAL_FILE:
+	case LOCAL_YAML:
 		return GetDbConfigFromLocalYaml(dbType)
 	default:
 		errMsg := fmt.Sprintf("wrong param of dbType(%s)", dbType)

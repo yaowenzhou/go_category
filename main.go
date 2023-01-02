@@ -19,12 +19,12 @@ func main() {
 	ctx := context.Background()
 	setLogFile()
 	defer configs.CloseLogFile()
-	// configs.InitConsulConfig("192.168.1.99", 8500, "/category/config/")
+	configs.InitConsulConfig("192.168.1.99", 8500, "/category/config/")
 	err := db.InitDB(ctx, []configs.DbType{
 		configs.MYSQL_TYPE,
 		configs.PGSQL_TYPE,
 		configs.REDIS_TYPE},
-		configs.LOCAL_FILE,
+		configs.LOCAL_YAML,
 	)
 	if err != nil {
 		log.Fatal(err)

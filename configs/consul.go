@@ -30,12 +30,12 @@ func InitConsulConfig(host string, port int64, prefix string) (err error) {
 		// optionally strip the provided prefix from the keys, defaults to false
 		cfgConsul.StripPrefix(true),
 	)
-	//配置初始化
+	// 配置初始化
 	consulConfig, err = config.NewConfig()
 	if err != nil {
 		return errors.Wrap(err, "config.NewConfig fail")
 	}
-	//加载配置
+	// 加载配置
 	err = consulConfig.Load(consulSource)
 	if err != nil {
 		err = errors.Wrap(err, "config.Load fail")
