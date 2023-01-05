@@ -8,12 +8,24 @@ require (
 	github.com/go-micro/plugins/v4/registry/consul v1.2.0
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/pkg/errors v0.9.1
+	github.com/sirupsen/logrus v1.7.0
 	github.com/spf13/viper v1.14.0
 	go-micro.dev/v4 v4.9.0
 	google.golang.org/protobuf v1.28.1
 	gorm.io/driver/mysql v1.4.4
 	gorm.io/driver/postgres v1.4.5
 	gorm.io/gorm v1.24.2
+)
+
+require (
+	github.com/opentracing/opentracing-go v1.2.0
+	github.com/uber/jaeger-client-go v2.30.0+incompatible
+)
+
+require (
+	github.com/HdrHistogram/hdrhistogram-go v1.1.2 // indirect
+	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
+	go.uber.org/atomic v1.9.0 // indirect
 )
 
 require (

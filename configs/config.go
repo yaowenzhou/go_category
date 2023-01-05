@@ -2,7 +2,6 @@ package configs
 
 import (
 	"fmt"
-	"go_category/consts"
 	"os"
 
 	"github.com/pkg/errors"
@@ -44,14 +43,6 @@ type DbConfig struct {
 	TimeOut      int    `json:"timeout"`        // 超时时间
 	MaxOpenConns int    `json:"max_open_conns"` // 最大连接数量
 	MaxIdleConns int    `json:"max_idle_conns"` // 最大空闲连接数量
-}
-
-func init() {
-	var err error
-	LogFile, err = os.OpenFile(consts.LogFile, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0664)
-	if err != nil {
-		panic(fmt.Errorf("open config file: %s", err.Error()))
-	}
 }
 
 // GetDbConfigFromLocalYaml 从本地yaml配置文件读取db配置

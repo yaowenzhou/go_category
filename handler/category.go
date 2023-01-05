@@ -9,6 +9,7 @@ import (
 	pb "go_category/proto/pb/category"
 
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cast"
 )
 
@@ -29,7 +30,8 @@ func (s *Category) CreateCategory(ctx context.Context,
 	}
 	id, err := c.CreateCategory(category)
 	if err != nil {
-		return errors.Wrap(err, "create category fail")
+		log.Error(err)
+		return err
 	}
 	out.Id = cast.ToString(id)
 	return nil
